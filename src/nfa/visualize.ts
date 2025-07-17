@@ -1,0 +1,1 @@
+// NFA → DOT / debug (optional) 
