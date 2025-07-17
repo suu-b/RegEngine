@@ -1,1 +1,30 @@
-// EBNF rules formalized (optional)
+/* Regex rules formalized in EBNF 
+---------------------------------------*/
+
+Expression ::= Anchor? Subexpression Anchor? 
+
+Subexpression ::= Term ("|" Subexpression)?
+
+Term ::= Factor+
+
+Factor ::= Token Quantifier?
+
+Token ::= Group | Character | Metacharacter
+
+Group ::= "(" Expression ")"
+
+Character ::= CapCharacter | SmallCharacter | Digit | SpecialCharacter
+
+Quantifier ::= "*" | "+" | "?" | "{" n "}" | "{" n "," m "}"
+
+Anchor ::= "^" | "$"
+
+Metacharacter ::= "."
+
+CapCharacter ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z"
+
+SmallCharacter ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+
+Digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+SpecialCharacter ::= "!" | "@" | "#" | "$" | "%" | "^" | "&" | "*" | "(" | ")" | "-" | "_" | "+" | "=" | "[" | "]" | "{" | "}" | "|" | "\\" | ":" | ";" | "'" | '"' | "," | "." | "/" | "?" | "`" | "~" | " "

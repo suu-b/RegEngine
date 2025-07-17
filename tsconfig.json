@@ -7,5 +7,6 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*", "tests/**/*", "playground/**/*", "tsconfig.json"]
+  "include": ["src/**/*", "tests/**/*", "playground/**/*", "tsconfig.json"],
+  "exclude": ["node_modules", "dist", "src/parser/grammar.ebnf"]
 } 
